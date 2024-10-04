@@ -96,13 +96,13 @@
       <repository>
         <id>nexus</id>
         <name>Landmark Technologies Releases Nexus Repository</name>
-        <url>http://34.229.95.60:8089/repository/teamoct2Release/</url>
+        <url>http://54.242.254.125:8089/repository/team3Release/</url>
       </repository>
       
       <snapshotRepository>
         <id>nexus</id>
         <name>Landmark Technologies Snapshot Nexus Repository </name>
-        <url>http://34.229.95.60:8089/repository/teamoct2Snapshot/</url>
+        <url>http://54.242.254.125:8089/repository/team3Snapshot/</url>
       </snapshotRepository>
       
   </distributionManagement>
