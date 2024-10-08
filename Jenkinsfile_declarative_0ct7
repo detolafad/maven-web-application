@@ -46,9 +46,9 @@ pipeline {
                 sh "echo Development is ready for the client review"
                 sh "echo using deploy to container plugin"
                 sh "echo ready for inspection"
-            }
-            timeout(time: 5, unit: 'DAYS') {
-                input message: 'Application ready for deployment, Please review and approve'
+                timeout(time: 5, unit: 'DAYS') {
+                    input message: 'Application ready for deployment, Please review and approve'
+                }
             }
         }
 
