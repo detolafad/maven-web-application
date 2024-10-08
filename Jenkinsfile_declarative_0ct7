@@ -1,56 +1,64 @@
-pipeline{
+pipeline {
     agent any
-    tools{
-        maven 'maven3.9.7'
+    tools {
+        maven 'maven3.9.7' // Ensure this version of Maven is configured in Jenkins
     }
-    stages{
-        stage('1.GitClone'){
-            steps{
+    stages {
+        stage('1.GitClone') {
+            steps {
                 sh "echo cloning the latest version"
                 git 'https://github.com/detolafad/maven-web-application'
             }
         }
-       
-       stage('2build'){
-           steps{
-               sh "echo creating deployable packages"
-               sh 'mvn clean package'
-           }
-       }
-       stage('3.CodeQualityAnalysis'){
-           steps{
-               sh "mvn sonar:sonar"
-               sh "echo CodeQualityAnalysis completed"
-           }
-       }
-       stage('4.UploadArtifacts'){
-           steps{
-               sh "mvn deploy"
-               sh "echo artifacts uploaded successfully"
-               sh "echo I am now a Build and Release Engineer"
-               sh " echo Build and release completed"
-           }
-       }
-       stage('5.Deploy2UAT'){
-           steps{
-               sh "echo Development is ready for the client review"
-               sh "echo using deploy to container plugin"
-               }
-           }
-        stage('6.Approval'){
-            steps
-            sh "echo Development is ready for the client review"
-            sh "echo using deploy to container plugin"
-            sh "echo ready for inspection"
-               timeout(time :5, unit:'DAYS'){
-               input message: 'Application ready for deployment, Please review and approve'
+        
+        stage('2.Build') {
+            steps {
+                sh "echo creating deployable packages"
+                sh 'mvn clean package'
+            }
         }
-       }
-    }
-    stage('7.Deploy2prod'){
-        steps{
-            sh "echo application reviewed, approved and ready for the market"
-            emailext body: 'Hello review and approve.     ',subject: 'success', to: 'detolafad@yahoo.com'
+        
+        stage('3.CodeQualityAnalysis') {
+            steps {
+                sh "mvn sonar:sonar"
+                sh "echo Code Quality Analysis completed"
+            }
+        }
+        
+        stage('4.UploadArtifacts') {
+            steps {
+                sh "mvn deploy"
+                sh "echo artifacts uploaded successfully"
+                sh "echo I am now a Build and Release Engineer"
+                sh "echo Build and release completed"
+            }
+        }
+        
+        stage('5.Deploy2UAT') {
+            steps {
+                sh "echo Development is ready for the client review"
+                sh "echo using deploy to container plugin"
+            }
+        }
+
+        stage('6.Approval') {
+            steps {
+                sh "echo Development is ready for the client review"
+                sh "echo using deploy to container plugin"
+                sh "echo ready for inspection"
+            }
+            timeout(time: 5, unit: 'DAYS') {
+                input message: 'Application ready for deployment, Please review and approve'
+            }
+        }
+
+        stage('7.Deploy2Prod') {
+            steps {
+                sh "echo application reviewed, approved, and ready for the market"
+                emailext body: 'Hello, the application has been reviewed and approved.', 
+                         subject: 'Deployment Success', 
+                         to: 'detolafad@yahoo.com'
+            }
         }
     }
 }
