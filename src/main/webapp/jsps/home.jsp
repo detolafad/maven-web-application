@@ -9,14 +9,14 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Tesla Web application Project.</h1>
-<h1 align="center">Landmark Software Solutions (LSS)  are developing and supporting quality Software Solutions to millions of clients globally.
-	           We are raising billionaires IT professionals accross the nations of the World.
-	Landmark Software Solutions (LSS) offers Training for DevOps with Linux, Kubernetes and Cloud, equipping IT Engineers for best performance.
-        Landmark Technologies, the Pride of Africa.
-	Class36 DevOps MasterClass started on April 13, 2024.
-        Class37 DevOps MasterClass will start on July 13, 2024.
-        Please invite all your contacts and friends for this life changing course.
+<h1 align="center">Welcome to Adetola Practice page.</h1>
+<h1 align="center">Godly Heritage Assisted Living Homes is a developing and supportive assisted living facility that loves to help everyone.
+	           We are commited to provide a safe and supportive environment for people who need help with daily tasks.
+	Godly Heritage Assisted Living Homes offer a social setting where residents can participate in recreational and spititual activities,exercises and wellness programs.
+        We allow residents to age in place and maintain their independence while being safe.
+	We offer help with medications, housekkeping and laundry.
+        Our workers are sympathetic and certified.
+        Do not hesistate to bring your relatives.
 </h1>
 <hr>
 <br>
@@ -39,20 +39,21 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 		<img src="images/mylandmarklogo.png" alt="" width="150">
 	</span>
 	<span style="font-weight: bold;">
-                Landmark Technology, 
-		Toronto, Canada
-		+1 437 215 2483,
-		mylandmarktech@gmail.com
+                Godly Heritage Assisted Living Homes, 
+		3034 Woodside Ave, 
+                Parkville, MD. USA 21234
+		+1 715-451-5416,
+		godlyheritageassistedlivinghomes@aol
 		<br>
-		<a href="mailto:mylandmarktech@gmail.com">Mail to Landmark Technologies</a>
+		<a href="godlyheritageassistedlivinghomes@aol">Mail to Godly Heritage Assisted Living Homes</a>
 	</span>
 </div>
 <hr>
 	<p> Service : <a href="services/employee/getEmployeeDetails">Get Employee Details </p>
 <hr>
 <hr>
-<p align=center> Landmark Technologies - Consultant, Training and Software Development</p>
-<p align=center><small>Copyrights 2021 by <a href="http://mylandmarktech.com/">Landmark Technologies</a> </small></p>
+<p align=center>Godly Heritage Assisted Living Homes</p>
+<p align=center><small>Copyrights 2021 by <a href="http://godlyheritageassistedlivinghomes.com/">GHL Homes</a> </small></p>
 
 </body>
 </html>
